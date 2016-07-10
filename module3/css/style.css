@@ -1,0 +1,10 @@
+.grey-bg {
+	background-color: #DFDFDF;
+	padding: 25px;
+}
+section {
+	margin-bottom: 20px;
+}
+ul.navbar-nav li:hover {
+	background-color: #DFDFDF;
+}
