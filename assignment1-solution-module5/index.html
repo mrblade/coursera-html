@@ -15,14 +15,14 @@
      <h1>Lunch Checker</h1>
 
          <div class="form-group">
-             <input style="border-color:{{borderColor}};" id="lunch-menu" type="text"
+             <input  id="lunch-menu" type="text"
              placeholder="list comma separated dishes you usually have for lunch"
              class="form-control" ng-model="values">
          </div>
          <div class="form-group">
              <button ng-click="sayMsg();" class="btn btn-default">Check If Too Much</button>
          </div>
-         <div style="color:{{txtColor}};" class="form-group message">
+         <div  class="form-group message">
            <!-- Your message can go here. -->
            {{msg}}
          </div>
