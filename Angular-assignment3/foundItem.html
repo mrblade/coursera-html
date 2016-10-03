@@ -1,0 +1,16 @@
+<div class="loader"></div>
+
+<div style="margin-top:100px"></div>
+
+<div class="col-xs-12" ng-repeat="i in found">
+<div class="box">
+<h4>{{i.name}}</h4>
+<p class="bold">{{i.short_name}}<p>
+<p>{{i.description}}</p>
+<hr>
+<a class="btn btn-primary" ng-click="onRemove({idx:$index});">Don't want this one!</a>
+
+
+</div>
+</div>
+
