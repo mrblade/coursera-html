@@ -1,0 +1,21 @@
+body {
+	background-color:#f2f2f2;
+}
+
+.whitebg {
+	background-color: white;
+	padding: 5px 15px;
+	margin-bottom: 15px;
+	cursor:pointer	
+	
+}
+.whitebgn {
+	background-color: white;
+	padding: 5px 15px;
+	margin-bottom: 15px;
+	cursor:default;
+}
+.whitebgn h4{
+	color:blue;
+	
+}
