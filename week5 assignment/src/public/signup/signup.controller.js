@@ -8,6 +8,7 @@ sController.$inject=['MenuService'];
 function sController(MenuService) {
 
 	var s =this;
+	s.noitem=false;
 	s.firstname="";
 	s.lastname="";
 	s.email="";
@@ -25,8 +26,8 @@ function sController(MenuService) {
 	};
 	
 	s.work = function(){
-		
-		 var a= MenuService.getmenu(s.shortname);
+		s.noitem=false;
+		var a= MenuService.getmenu(s.shortname);
 	a.then(function(rsp){
 		//success
 		MenuService.user.firstname=s.firstname;
@@ -38,12 +39,13 @@ function sController(MenuService) {
 		MenuService.user.img=MenuService.imgpath + s.shortname + ".jpg";
 		s.success=true;
 		s.cleardata();
-		s.noitem=false;
+		
 		},
 	function(){
 		//fail
-		s.success=false;
 		s.noitem=true;
+		s.success=false;
+		
 		});
 	};
 }

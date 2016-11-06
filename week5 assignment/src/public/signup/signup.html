@@ -100,7 +100,7 @@ background-color: #f6b319;
            
          </div>
          <div class="alert alert-danger" role="alert" ng-if="(SignupForm.favdish.$error.required ) && SignupForm.favdish.$touched">Favourite dish number is required.</div>
-         <div class="alert alert-danger" role="alert" ng-if="spcrl.noitem "><span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;No such menu number exists.</div>
+         <div class="alert alert-danger" role="alert" ng-if="spcrl.noitem && !(SignupForm.favdish.$touched)"><span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;No such menu number exists.</div>
     </div>
        <div class="col-xs-2">
         <button ng-disabled="SignupForm.$invalid" class="btn btn-primary" ng-click="spcrl.work();SignupForm.$setUntouched();SignupForm.$setPristine();">&nbsp;Submit&nbsp;</button>
