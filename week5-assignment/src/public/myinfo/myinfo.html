@@ -1,0 +1,19 @@
+<style>
+#myinfo span.glyphicon{
+	color:#f6b319;	
+}
+
+</style>
+<div class="container">
+<h1>My Info</h1>
+<hr>
+<div id="myinfo" ng-if="myinfocrl.user.firstname">
+    <p><span class="glyphicon glyphicon-user" aria-hidden="true">&nbsp;</span><strong>First Name: </strong>{{myinfocrl.user.firstname}}</p>
+    <p><span class="glyphicon glyphicon-user" aria-hidden="true">&nbsp;</span><strong>Last Name: </strong>{{myinfocrl.user.lastname}}</p>
+    <p><span class="glyphicon glyphicon-envelope" aria-hidden="true">&nbsp;</span><strong>Email: </strong>{{myinfocrl.user.email}}</p>
+    <p><span class="glyphicon glyphicon-phone-alt" aria-hidden="true">&nbsp;</span><strong>Phone: </strong>{{myinfocrl.user.phone}}</p>
+    <p><span class="glyphicon glyphicon-cutlery" aria-hidden="true">&nbsp;</span><strong>Favourite Dish: </strong>{{myinfocrl.user.fav}}<br><span style="color:#f6b319">{{myinfocrl.user.itmdesc}}</span></p>
+    <img src="{{myinfocrl.user.img}}" alt="favourite dish">
+</div>
+<div ng-if="!(myinfocrl.user.firstname)">Not Signed Up Yet. <a style="color:#f6b319;" ui-sref="public.signup">Sign up Now!</a></div>
+</div>
