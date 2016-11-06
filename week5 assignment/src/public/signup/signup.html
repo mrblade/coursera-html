@@ -1,0 +1,113 @@
+<style>
+#signup .form-control{
+	background-color: #222;
+	border-color: #f6b319;
+	border-radius:0;
+	color:white;
+	
+}
+
+#signup .input-group {
+
+    margin-bottom: 20px;
+}
+#signup .alert-danger {
+    color: #ef507d;
+    background-color: #410E20;
+	border:none;
+	border-radius:0;
+	padding:10px !important;
+	
+}
+
+#signup .alert-success {
+    color: #4e3c14;
+background-color: #f6b319;
+	border:none;
+	border-radius:0;
+	padding:10px !important;
+	
+}
+
+#signup .btn{
+	background-color:#f6b319;
+		border-radius:0;
+		border-color: #f6b319;
+		color:#222;
+		
+		text-transform:uppercase;
+		font-weight:bold;
+}
+
+#signup .input-group-addon{
+	background-color:#f6b319;
+	border-radius:0;
+	border-color: #f6b319;
+	color:#222;
+}
+
+#signup .form-control:focus {
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(0, 0, 0, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(0, 0, 0, 0.6);
+}
+</style>
+
+<div class="container" id="signup">
+<div class="row">
+<h1>Sign UP</h1>
+<br>
+<form name="SignupForm" novalidate>
+              
+        <div class="col-xs-8">
+        	<div class="input-group">
+            	<span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+            	<input required name="firstname" type="text" class="form-control" placeholder="First Name" ng-model="spcrl.firstname" >
+         	</div>
+            
+            <div class="alert alert-danger" role="alert" ng-if="SignupForm.firstname.$error.required && SignupForm.firstname.$touched">First Name is required.</div>
+        </div>
+        
+        <div class="col-xs-4">
+         <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+            <input required name="lastname" type="text" class="form-control" placeholder="Last Name" ng-model="spcrl.lastname" >
+         </div>
+        
+         <div class="alert alert-danger" role="alert" ng-if="SignupForm.lastname.$error.required && SignupForm.lastname.$touched">Last Name is required.</div>
+        </div>
+       
+         <div class="col-xs-6">
+         <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></span>
+            <input required name="email" type="email" class="form-control" placeholder="Email" ng-model="spcrl.email" >
+         </div>
+        
+         <div class="alert alert-danger" role="alert" ng-if="(SignupForm.email.$error.required || !(SignupForm.email.$valid) ) && SignupForm.email.$touched">Email is required and it must be in format @domain.com.</div>
+        </div>
+        
+         <div class="col-xs-6">
+         <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span></span>
+            <input required name="phone" type="text" class="form-control" placeholder="Phone number" ng-model="spcrl.phone" >
+         </div>
+         
+         <div class="alert alert-danger" role="alert" ng-if="(SignupForm.phone.$error.required ) && SignupForm.phone.$touched">Phone is required.</div>
+        </div>
+    <div class="col-xs-12">
+    	<div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span></span>
+            <input required name="favdish" type="text" class="form-control" placeholder="Favourite dish number" ng-model="spcrl.shortname" >
+           
+         </div>
+         <div class="alert alert-danger" role="alert" ng-if="(SignupForm.favdish.$error.required ) && SignupForm.favdish.$touched">Favourite dish number is required.</div>
+         <div class="alert alert-danger" role="alert" ng-if="spcrl.noitem "><span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;No such menu number exists.</div>
+    </div>
+       <div class="col-xs-2">
+        <button ng-disabled="SignupForm.$invalid" class="btn btn-primary" ng-click="spcrl.work();SignupForm.$setUntouched();SignupForm.$setPristine();">&nbsp;Submit&nbsp;</button>
+    	</div>
+        <div class="col-xs-10">
+         <div class="alert alert-success" role="alert" ng-if="spcrl.success"><span class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp;Your information has been saved.</div>
+        </div>
+       
+    </form>
+</div></div>
