@@ -27,7 +27,7 @@ function sController(MenuService) {
 	
 	s.work = function(){
 		s.noitem=false;
-		var a= MenuService.getmenu(s.shortname);
+		var a= MenuService.getmenu(s.shortname.toUpperCase());
 	a.then(function(rsp){
 		//success
 		MenuService.user.firstname=s.firstname;
@@ -35,8 +35,8 @@ function sController(MenuService) {
 		MenuService.user.email=s.email;
 		MenuService.user.phone=s.phone;
 		MenuService.user.fav=rsp.data.name;
-		MenuService.user.itmdesc=rsp.data.description;
-		MenuService.user.img=MenuService.imgpath + s.shortname + ".jpg";
+		MenuService.user.itmdesc=rsp.data.description ;
+		MenuService.user.img=MenuService.imgpath + s.shortname.toUpperCase() + ".jpg";
 		s.success=true;
 		s.cleardata();
 		
